@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task</title>
+    <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/digital_number.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/test/jsunit/app/jsUnitCore.js"></script>
+    <script type="text/javascript">
+        function testValidateStrNumber() {
+            assert(validateStrNumber("5", "пять"));
+            assert(validateStrNumber("15", "пятнадцать"));
+            assert(validateStrNumber("54", "пятьдесят четыре"));
+            assert(validateStrNumber("675", "шестьсот семьдесят пять"));
+            assert(validateStrNumber("4758", "четыре тысячи семьсот пятьдесят восемь"));
+            //Проверка с допущеной ошибкой
+            assert(validateStrNumber("1456", "одна тысяч четыреста пятьдесят шесть"));
+            assert(validateStrNumber("1456478578", "один миллиард четыреста пятьдесят шесть миллион четыреста семьдесят восемь тысяч пятьсот семьдесят восемь"));
+        }
+    </script>
+</head>
+<body>
+    <div class="container" style="margin-top: 240px;">
+        <div id="result"></div>
+        <div class="row">
+            <div class="well span4 offset4 form-inline">
+                <legend>Перевод</legend>
+                <input type="text" class="digital_number" placeholder="Введите число">
+                <button type="submit" class="translate btn btn-success" name="submit"><i class="icon-arrow-right"></i></button>
+                <p>Cтроковая запись:</p>
+                <p class="string_number"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
